@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<style>
+			body {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: 90px 1fr;
+				height: 100vh;
+				background-image: url(lake.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				font-family: "Lucida Sans", 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			}
+
+			navbar {
+				grid-column: 1/2;
+				grid-row: 1/2;
+				display: grid;
+				grid-template-columns: 250px 1fr;
+				grid-template-rows: 90px;
+				background-color: rgba(49, 48, 48, 8.637);
+				backdrop-filter: blur(5px);
+			}
+
+			.logo {
+				grid-column: 1/2;
+				grid-row: 1/2;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.logo img {
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				/* Make the image round */
+				border: 3px solid #5ddcff;
+				/* Change the border color */
+				box-shadow: 0 0 10px #5ddcff;
+				/* Change the glow effect color */
+			}
+
+			.navlist {
+				grid-column: 2/3;
+				grid-row: 1/2;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+
+			.myList {
+				display: flex;
+				justify-content: flex-end;
+				margin-right: 250px;
+			}
+
+			.list li {
+				display: inline-flex;
+				margin-right: 80px;
+				list-style: none;
+				position: relative;
+				/* Add this line */
+				right: -50px;
+				/* Add this line */
+				top: 2px;
+				/* Add this line */
+			}
+
+			.list li a {
+				font-size: px;
+				color: rgb(255, 248, 248);
+				/* Change this to white */
+				text-decoration: none;
+				/* Các thuộc tính mới */
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-weight: bold;
+				/* New property */
+			}
+
+			#signIn {
+				padding: 5px 15px;
+				border-radius: 20px;
+				color: white;
+				background-color: rgb(25, 21, 21);
+				position: relative;
+				/* Add this line */
+				right: -50px;
+				/* Add this line */
+				top: 10px;
+				/* Add this line */
+				border-left: 2.5px solid 	#9346dbcc;
+				/* Add this line */
+				border-right: 2.5px solid 	#9346dbcc;
+				/* Add this line */
+				border-top: 2.5px solid 	#9346dbcc;
+				/* Add this line */
+				border-bottom: 2.8px solid 	#9346dbcc;
+				/* Add this line */
+				border-radius: 15px;
+				/* Add this line */
+				
+			}
+
+
+			.menu {
+				position: relative;
+				width: 130px;
+			}
+
+			.menu .label {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				width: 100%;
+				padding: 5px;
+				border-radius: 4px;
+				font-weight: bold;
+				cursor: pointer;
+				color: white;
+				/* Add this line */
+			}
+
+			.menu:hover .list {
+				max-height: 250px;
+			}
+
+			.menu .list {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 120%;
+				max-height: 0;
+				overflow: hidden;
+				padding: 0 10px;
+				border-radius: 3px;
+				list-style: none;
+				transition: max-height .35s ease-in-out;
+				color: white;
+				/* Add this line */
+			}
+
+			.item {
+				width: 130px;
+				/* Adjust as needed */
+				height: 50px;
+				/* Adjust as needed */
+				border-left: 2.5px solid 	#9346dbcc;
+				/* Add this line */
+				border-right: 2.5px solid 	#9346dbcc;
+				/* Add this line */
+				border-top: 2.5px solid 	#9346dbcc;
+				/* Add this line */
+				border-bottom: 2.7px solid 	#9346dbcc;
+				/* Add this line */
+				border-radius: 15px;
+				/* Add this line */
+				padding: 5px;
+				/* Add this line */
+				display: flex;
+				/* Add this line */
+				justify-content: center;
+				/* Add this line */
+				align-items: center;
+				/* Add this line */
+				backdrop-filter: blur(20px);
+				background-color: rgba(0, 0, 0, 0.388);
+				position: relative;
+				/* Add this line */
+				top: -10px;
+				/* Adjust as needed */
+				left: -10px;
+				/* Adjust as needed */
+			}
+		</style>
+		<link rel="stylesheet" href="./index.css">
+
+		<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+	</head>
+
+	<body>
+		<navbar>
+			<div class="logo">
+				<img src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-6/387138218_307672791981166_12567610879384370_n.jpg?stp=dst-jpg_p180x540&_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=hMhlGZQJ0IQAX9df87M&_nc_ht=scontent.fsgn5-2.fna&oh=00_AfBHYsSW-eq9Ycy4gw7XBNYZoQp_940_3KrU_CbaHdt5MQ&oe=652EB66F" alt="">
+			</div>
+			<div class="navlist">
+				<div class="myList">
+					<ul class="list">
+						<li><a href="#">Trang Chủ</a></li> <!-- Change this line -->
+						<li>
+							<div class="menu">
+								<div class="label"> Danh Thiếp <span>▾</span> </div>
+								<ul class="list">
+									<li class="item">NỘI DUNG 1</li>
+									<li class="item">NỘI DUNG 2</li>
+									<li class="item">NỘI DUNG 3</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="menu">
+								<div class="label"> Sản Phẩm <span>▾</span> </div>
+								<ul class="list">
+									<li class="item">NỘI DUNG 1</li>
+									<li class="item">NỘI DUNG 2</li>
+									<li class="item">NỘI DUNG 3</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="menu">
+								<div class="label"> Liên Hệ <span>▾</span> </div>
+								<ul class="list">
+									<li class="item">NỘI DUNG 1</li>
+									<li class="item">NỘI DUNG 2</li>
+									<li class="item">NỘI DUNG 3</li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#" id="signIn">SignIn</a></li>
+					</ul>
+				</div>
+			</div>
+		</navbar>
+
+			<div class="app">
+
+				<div class="cardList">
+					<button class="cardList__btn btn btn--left">
+						<div class="icon">
+							<svg>
+								<use xlink:href="#arrow-left"></use>
+							</svg>
+						</div>
+					</button>
+
+					<div class="cards__wrapper">
+						<div class="card current--card">
+							<div class="card__image">
+								<img src="https://th.bing.com/th/id/OIP.7XxEPW1tgp6TP2CrTo5u2QHaFj?pid=ImgDet&rs=1" alt="" />
+							</div>
+						</div>
+
+						<div class="card next--card">
+							<div class="card__image">
+								<img src="https://img.thuthuatphanmem.vn/uploads/2018/10/26/anh-gif-dong-dep-va-hai_055202213.gif" alt="" />
+							</div>
+						</div>
+
+						<div class="card previous--card">
+							<div class="card__image">
+								<img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+							</div>
+						</div>
+					</div>
+
+					<button class="cardList__btn btn btn--right">
+						<div class="icon">
+							<svg>
+								<use xlink:href="#arrow-right"></use>
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="infoList">
+					<div class="info__wrapper">
+						<div class="info current--info">
+							<h1 class="text name">hi </h1>
+							<h4 class="text location">chả biết ghi gì</h4>
+							<p class="text description">mô tả lùa gà</p>
+						</div>
+
+						<div class="info next--info">
+							<h1 class="text name">thương hiệu : làm gì có</h1>
+							<h4 class="text location">tên sản phẩm : lùa gà</h4>
+							<p class="text description">giá 300k</p>
+						</div>
+
+						<div class="info previous--info">
+							<h1 class="text name">Chamonix</h1>
+							<h4 class="text location">France</h4>
+							<p class="text description">Let your dreams come true</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="app__bg">
+					<div class="app__bg__image current--image">
+						<img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
+					</div>
+					<div class="app__bg__image next--image">
+						<img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
+					</div>
+					<div class="app__bg__image previous--image">
+						<img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+					</div>
+				</div>
+			</div>
+
+			<div class="loading__wrapper">
+				<div class="loader--text">Loading...</div>
+				<div class="loader">
+					<span></span>
+				</div>
+			</div>
+
+
+			<svg class="icons" style="display: none;">
+				<symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+					<polyline points='328 112 184 256 328 400'
+						style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+				</symbol>
+				<symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+					<polyline points='184 112 328 256 184 400'
+						style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+				</symbol>
+			</svg>
+
+			<div class="support">
+				<a href="https://twitter.com/DevLoop01" target="_blank"><i class="fab fa-twitter-square"></i></a>
+				<a href="https://dribbble.com/devloop01" target="_blank"><i class="fab fa-dribbble"></i></a>
+			</div>
+		</div>
+
+		<script>
+			document.getElementById("signIn").addEventListener("click", function () {
+				window.location.href = "https://truonmanhha.github.io/TRANGDANGNHAP/";
+			});
+			window.onload(() => {
+
+			})
+		</script>
+		<script src="./index.js"></script>
+
+	</body>
+
+</html>
